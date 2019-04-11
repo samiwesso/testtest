@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="angularApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Demo - 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style/style.css">
+    <script src="style/java.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+</head>
+<body>
+        <div id="topbar-back">
+            <div id="topbar" class="container col-md-9">
+                <ul>
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></i></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-behance"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                    <li><a href=""><i class="fas fa-yin-yang"></i></a></li>
+                </ul>
+                <ul>
+                    <li><a href=""><strong>FAQ</strong></a></li>
+                    <li><a href=""><strong>TERMS</strong></a></li>
+                </ul>
+                <ul></ul>
+                <ul>
+                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                    <li><i><a href=""><span>info@webmail.com</span></a></i></li>
+                </ul>
+            </div>
+        </div>
+        <header class="headerside" class="container">
+                <div id="header-dicoration">
+                    <div id="logo">
+                        <img src="image/logo.png" alt="">
+                        <h1>Pohat<span style="color:#ff8155">.</span></h1>
+                    </div>
+                    <div id="">
+                        <select name="" id="language">
+                            <option value="">EN</option>
+                            <option value="">SE</option>
+                        </select>
+                    </div>
+                    <div id="telephone-number">+90878 87 878 7</div>
+                    <div id="header-dicoration-nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Service</a></li>
+                            <li><a href="">Pages</a></li>
+                            <li><a href="">News</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div id="header-dicoration-side-button"><a href="">GET A QUOTE</a></div>
+                </div>
+            </header>
+            <div id="firstpart" style="background-image:url('image/bg1.jpg') ">
+                <p>DIGITAL MARKETING</p>
+                <h1>Product Store</h1>
+                <div>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <strong>|</strong>
+                        <li><a href="">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+     
+
+       
+          <div class="wrap">
+        <div class="container wrap-first-box">
+            <div id="wrap-first-box-parts" style="margin-left:10%;">
+                <div><i> <a href=""><img src="image/icon1.png" alt=""></a></i></div>
+                <div>
+                    <strong>Free Shipping</strong>
+                    <p>Order over $100</p>
+                </div>
+            </div>
+            <div id="wrap-first-box-parts">
+                <div><i> <a href=""><img src="image/icon2.png" alt=""></a></i></div>
+                <div>
+                    <strong>Free Return</strong>
+                    <p>In 30 Days</p>
+                </div>
+            </div>
+            <div id="wrap-first-box-parts">
+                <div><i><a href=""><img src="image/icon3.png" alt=""></a></i></div>
+                <div>
+                    <strong>100% Secure</strong>
+                    <p>Shipping</p>
+                </div>
+            </div>
+            <div id="wrap-first-box-parts">
+                <div><i> <a href=""><img src="image/icon4.png" alt=""></a></i></div>
+                <div>
+                    <strong>Best Price</strong>
+                    <p>Granted</p>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-second-box">
+            <div>
+                <ul>
+                    <li><a href="#!tablerow"><i class="fas fa-th"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#!tablcolumn"><i class="fas fa-sliders-h"
+                                style="background-color:#ff8155; color: #ffffff;"></i></a></li>
+                </ul>
+            </div>
+            <div id="showing-line">
+                <p>Showing 
+                    <select id="rowLimits" ng-model="rowLimits.value" ng-options="v for v in rowLimits.values" style="border:none; background: #ced8fc;">
+                        </select>of 30 results</p>
+            </div>
+            <div id="sort-part">
+                <select name="" id="sortby" ng-model="sortColumn">
+                    <option value="">Sort by</option>
+                    <option value="productname">Product</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            <form class="form-inline my-2 my-lg-0" class="searchby" id="search-part">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    ng-model="searchText">
+                <button class="btn my-2 my-sm-0 searchtext" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="wrap-main-part" ng-view>
+            </div>
+        </div>
+        <div id="wrap-sides-line">
+            <div id="wrap-sides-line-dicoration"><a href=""><i class="fas fa-arrow-left"></i></a></div>
+            <div id="wrap-sides-line-dicoration">01</div>
+            <div id="wrap-sides-line-dicoration" style="background-color:#ff8155">02</div>
+            <div id="wrap-sides-line-dicoration">...</div>
+            <div id="wrap-sides-line-dicoration">04</div>
+            <div id="wrap-sides-line-dicoration"><a href=""><i class="fas fa-arrow-right"></i></a></div>
+        </div>
+
+    </div>
+
+<footer id="footer" style="background-image:url('image/20_shop.jpg') ">
+        <div id="footer-in">
+            <div id="footer-in-first-line">
+                <div id="footer-in-logogroup">
+                    <div id="logo" style="margin-right:80px;">
+                        <img src="image/logo.png" alt="">
+                        <h1 style="text-align:left;">Pohat<span style="color:#ff8155">.</span></h1>
+                    </div>
+                    <div>
+                        <p style="min-width:100px;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, amet facere! Explicabo, illo
+                            provident voluptates minus possimus facilis autem omnis,
+                            sint accusantium fugiat laboriosam odit beatae. Vitae beatae obcaecati, tempora quisquam
+                            nisi
+                            ab? Ut aliquam unde fuga possimus itaque dolore cum
+                            facilis porro! Iste deserunt repudiandae perferendis earum, architecto tempore repellendus
+                            ratione modi magnam est vitae illum unde eius adipisci.
+                        </p>
+                    </div>
+                    <div id="footer-in-socialmedia">
+                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="" style="background-color:#ff8155"><i class="fab fa-twitter"
+                                    style="color:#ffffff"></i></a>
+                        </li>
+                        <li><a href=""><i class="fab fa-behance"></i></a></li>
+                        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                        <li><a href=""><i class="fas fa-yin-yang"></i></a></li>
+                    </div>
+                </div>
+                <div>
+                    <h2>More Links.</h2>
+                    <div id="footer-links">
+                        <li><a href="">Paid SEO</a></li>
+                        <li><a href="">Service</a></li>
+                        <li><a href="">Digital Marketing</a></li>
+                        <li><a href="">Our Team</a></li>
+                        <li><a href="">Startgy Planning</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Offline SEO</a></li>
+                        <li><a href="">Shop</a></li>
+                        <li><a href="">Page Rank Up</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">User Panel</a></li>
+                        <li><a href="">Book Appointment</a></li>
+                    </div>
+                </div>
+                <div>
+                    <h2>News Feeds.</h2>
+                    <div id="footer-news">
+                        <div id="footer-news-color"></div>
+                        <div>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+                                maxime.</h3>
+                            <p>14 July 2019</p>
+                        </div>
+                        <div id="footer-news-color"></div>
+                        <div>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+                                maxime.</h3>
+                            <p>14 July 2019</p>
+                        </div>
+                        <div id="footer-news-color"></div>
+                        <div>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+                                maxime.</h3>
+                            <p>14 July 2019</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="bottombar">Copyright By&copy;<strong style="color:orangered">NilArtStudio-</strong>2019
+            </div>
+    </footer>
+    <div class="scrollTop">
+        <span><a href="#">BACK TO TOP</a></span>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

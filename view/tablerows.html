@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="col-mg-12">
+        <div class="card-deck" style="min-width: 700px;">
+            <div class="col-md-4 mb-4" class="card-deck"
+                ng-repeat="item in namelist | filter: searchText | orderBy:sortColumn | limitTo: rowLimits.value"
+                style=" padding-left:0; padding-right:0;">
+                <div class="card">
+                    <img ng-src="{{ item.imagebook }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.productname }}</h5>
+
+                    </div>
+                    <div class="card-footer" style="padding-right:0;">
+                        <span class="card-text" >${{ item.price }}</span>
+                        <div class="stars-outer">
+                            <div class="stars-inner" ng-style="{ 'width': rating(item.rating) }" ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
