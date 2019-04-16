@@ -1,22 +1,8 @@
 
-product = [
-    { imagebook: "image/t-shirt/Helix-Colorful-T-Shirt.jpg", productname: "Helix Colorful T-Shirt", price: 100 ,rating: 2.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-white-T-Shirt.jpeg", productname: "Helix  white T-Shirt", price: 110 , rating: 3.5, totalratings: 12 },
-    { imagebook: "image/t-shirt/Helix-black-T-Shirt.jpeg", productname: "Helix  black T-Shirt", price: 50 , rating: 2.5, totalratings: 7 },
-    { imagebook: "image/t-shirt/Helix-gry-T-Shirt.jpeg", productname: "Helix  gry T-Shirt", price: 80 , rating: 3.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-yellow-T-Shirt.jpeg", productname: "Helix  yellow T-Shirt", price: 600 ,rating: 2.5, totalratings: 3 },
-    { imagebook: "image/t-shirt/Helix-orang-T-Shirt.jpeg", productname: "Helix  orang T-Shirt", price: 40 , rating: 3.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-red-T-Shirt.jpeg", productname: "Helix  red T-Shirt", price: 90 , rating: 2.5, totalratings: 0 },
-    { imagebook: "image/t-shirt/Helix-brown-T-Shirt.jpeg", productname: "Helix  brown T-Shirt", price: 88 , rating: 3.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-purple-T-Shirt.jpeg", productname: "Helix  purple T-Shirt", price: 35 , rating: 2.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-white-black-T-Shirt.jpeg", productname: "Helix  white/black T-Shirt", price: 450 , rating: 3.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-colors-T-Shirt.jpeg", productname: "Helix  colors T-Shirt", price: 55 , rating: 2.5, totalratings: 5 },
-    { imagebook: "image/t-shirt/Helix-yelloww-T-Shirt.jpeg", productname: "Helix  yelloww T-Shirt", price: 510 , rating: 3.5,totalratings: 5 }
-];
 
-var app = angular.module("angularApp", ["ngRoute"])
+ angular.module("angularApp", ["ngRoute"])
 
-app.config(function($routeProvider) {
+.config(function($routeProvider) {
     $routeProvider
 
     .when("/", {
@@ -28,17 +14,21 @@ app.config(function($routeProvider) {
         templateUrl: "view/tablerows.html",
         controller: "tablerowController" 
     })
+    
 
     .when("/tablcolumn", {
         templateUrl: "view/tablecolumn.html",
         controller: "tablcolumnController" 
     })
-});
+})
 
 
-app.controller("tablerowController", function($rootScope) {
-    $rootScope.namelist = product
+.controller("tablerowController", function($rootScope, $http) {
+    
     const starsTotal = 5;
+
+    $http.get("http://localhost:5000/api/products")
+    
 
     $rootScope.rating = function(input) {
     return `${Math.round(((input / starsTotal) * 100) / 10) * 10}%`;
@@ -66,17 +56,17 @@ app.controller("tablerowController", function($rootScope) {
 })
 
 
-.controller("tablcolumnController", function($rootScope) {
-    $rootScope.namelist = product
+.controller("tablcolumnController", function($rootScope, $http) {
+    
 
     const starsTotal = 5;
 
+    $http.get("http://localhost:5000/api/products")
+    
     $rootScope.rating = function(input) {
         return `${Math.round(((input / starsTotal) * 100) / 10) * 10}%`;
     }
-     // $scope.namelist = namelist;
-    //  $scope.rowLimits = "10 selected";
-     // $scope.sortColumn = "productname";
+    
 
      $rootScope.rowLimits = {
         "type":"select",
