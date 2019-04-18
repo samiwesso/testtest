@@ -25,15 +25,18 @@
 
 .controller("tablerowController", function($rootScope, $http) {
     
+       //   $rootScope.products= res.data
+    // console.log($rootscope.products);
+
     const starsTotal = 5;
 
-    $http.get("http://localhost:5000/api/products")
+    $http.get("http://localhost:5000/api/products").then((res) => $rootScope.namelist = res.data);
     
 
     $rootScope.rating = function(input) {
     return `${Math.round(((input / starsTotal) * 100) / 10) * 10}%`;
     }
-    // $scope.rowLimits = "10 selected";
+    
     $rootScope.rowLimits = {
         "type":"select",
         "name":"rowLimits",
@@ -58,10 +61,13 @@
 
 .controller("tablcolumnController", function($rootScope, $http) {
     
+     //   $rootScope.products= res.data
+    // console.log($rootscope.products);
 
     const starsTotal = 5;
 
-    $http.get("http://localhost:5000/api/products")
+    $http.get("http://localhost:5000/api/products").then((res) => $rootScope.namelist = res.data);
+  
     
     $rootScope.rating = function(input) {
         return `${Math.round(((input / starsTotal) * 100) / 10) * 10}%`;

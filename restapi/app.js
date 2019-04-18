@@ -8,11 +8,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    
-    next();
-});
+
 // http://localhost:port/api/products
 const productRoutes = require("./routes/products.js");
 app.use("/api/products", productRoutes);
