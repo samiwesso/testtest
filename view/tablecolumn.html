@@ -1,23 +1,32 @@
-<div class="container">
-    <div class="col-mg-12">
-        <div class="card-deck" style="min-width: 700px;">
-            <div class="col-md-8 mb-4" class="card-deck"
-                ng-repeat="item in namelist | filter: searchText |  limitTo:rowLimits.value  | orderBy:sortColumn"
-                style="margin-left:150px;">
-                <div class="card">
-                    <img ng-src="{{ item.imagebook }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ item.productname }}</h5>
-
-                    </div>
-                    <div class="card-footer" style="padding-right:0;">
-                        <span class="card-text" style="font-size:25px;">${{ item.price }}</span>
-                        <div class="stars-outer">
-                            <div class="stars-inner" ng-style="{ 'width': rating(item.rating) }"></div>
-                        </div>
-                    </div>
-                </div>
+<div class="card mb-1" style="max-width: 1000px; min-width:700px; "
+  ng-repeat="item in namelist | filter: searchText |  limitTo:rowLimits.value  | orderBy:sortColumn">
+  <div class="row no-gutters col-md-12">
+    <div class="col-md-2">
+      <img ng-src="{{ item.imagebook }}" style="width:100px;" class="card-img" alt="...">
+    </div>
+    <div class="col-md-10">
+      <div class="row card-body">
+        <h5 class="col-md-3 card-title">{{ item.productname }}</h5>
+        <p class="card-text col-md-2">${{item.price}}</p>
+        <div class="row">
+          <div class="row ">
+            <div class="col-md-5"><input class="quantity col-md-12" type="number" name="quantity" id="quantity" ng-model="item.quantity">
             </div>
+            <div class="col-md-6" >{{item.price * item.quantity}} :-</div>
+          </div>
+          <div>
+            <div>
+              <button class="mb-2 btn btn-sm btn-success" ng-click="addItem(item)">Add to Cart</button>
+            </div>
+            <div class="stars-outer">
+              <div class="stars-inner" ng-style="{ 'width': rating(item.rating) }"></div>
+            </div>
+          </div>
+
         </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+
+

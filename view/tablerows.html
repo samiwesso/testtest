@@ -1,6 +1,6 @@
 <div class="container">
     <div class="col-mg-12">
-        <div class="card-deck" style="min-width: 700px;">
+        <div class="card-deck" style="min-width: 700px; ">
             <div class="col-md-4 mb-4" class="card-deck"
                 ng-repeat="item in namelist | filter: searchText | orderBy:sortColumn | limitTo: rowLimits.value"
                 style=" padding-left:0; padding-right:0;">
@@ -10,11 +10,23 @@
                         <h5 class="card-title">{{ item.productname }}</h5>
 
                     </div>
-                    <div class="card-footer" style="padding-right:0;">
-                        <span class="card-text" >${{ item.price }}</span>
-                        <div class="stars-outer">
-                            <div class="stars-inner" ng-style="{ 'width': rating(item.rating) }" ></div>
+                    <div class="card-footer" >
+                        <div class="column">
+                            <span class="card-text">${{ item.price }}</span>
+                            <div><input class="quantity" type="number" name="quantity" id="quantity" ng-model="item.quantity" style="width:50px;"></div>
+                        <div> {{item.price * item.quantity}} :-</div>
                         </div>
+                        
+
+                        <div>
+                            <button class="btn btn-sm btn-success mb-3" ng-click="addItem(item)" style="width:90px; margin-left:-10px; ">Add to Cart</button>
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="text-align:right;"
+                                    ng-style="{ 'width': rating(item.rating) }"></div>
+                            </div>
+                           
+                        </div>
+                        
                     </div>
                 </div>
             </div>

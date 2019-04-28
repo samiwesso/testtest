@@ -8,6 +8,9 @@ body {
 body p {
     font-size: 10px;
 }
+.card-text {
+    font-size: 20px;
+}
  body h3 {
     font-size: 12px;
 }
@@ -39,7 +42,7 @@ ul, i, strong, span {
 }
 #topbar {
     display: grid;
-    grid-template-columns:140px 120px auto 225px ;
+    grid-template-columns:140px 120px auto 225px 200px;
     /* border: 1px solid black; */
     /* margin: 0 200px -9px 200px;  */
     text-align: right;
@@ -240,6 +243,7 @@ ul, i, strong, span {
         font-size: 15px ;
         font-weight: 600;
     }
+   
     .card-footer span {
                     color: #fda483;
                     margin: 0%;

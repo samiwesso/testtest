@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AngularJS Demo</title>
+
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+  <form>
+    <div class="form-row">
+      <div class="form-column col-md-6">
+        <div class="col-md-12 mb-3">
+          <label for="validationServer01">First name</label>
+          <input type="text" class="form-control" id="validationServer01" placeholder="First name" 
+            required>
+
+        </div>
+        <div class="col-md-12 mb-6">
+          <label for="validationServer02">Last name</label>
+          <input type="text" class="form-control " id="validationServer02" placeholder="Last name" 
+            required>
+          
+        </div>
+        <div class="col-md-12 mt-6">
+          <label for="validationServerUsername" class="mt-6">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend3">@</span>
+            </div>
+            <input type="text" class="form-control" id="validationServerUsername" placeholder="Username"
+              aria-describedby="inputGroupPrepend3" required>
+         
+          </div>
+        </div>
+      </div>
+      <div class="form-column col-md-6">
+        <div class="col-md-10 mb-3">
+          <label for="validationServer03">City</label>
+          <input type="text" class="form-control" id="validationServer03" placeholder="City" required>
+       
+        </div>
+        <div class="col-md-10 mb-3">
+          <label for="validationServer04">State</label>
+          <input type="text" class="form-control " id="validationServer04" placeholder="State" required>
+         
+        </div>
+        <div class="col-md-10 mb-3">
+          <label for="validationServer05">Zip</label>
+          <input type="text" class="form-control " id="validationServer05" placeholder="Zip" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" required>
+          <label class="form-check-label" for="invalidCheck3">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+  <style>
+    body {
+      margin: 50px 150px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Angular JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-cookies.min.js"></script>
+</body>
+
+</html>
